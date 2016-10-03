@@ -1,5 +1,3 @@
-# age-grade
-Age grading for race results (running) based on tables provided by WMA
 # Age Grade
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/runalyze/age-grade.svg)](https://packagist.org/packages/runalyze/age-grade)

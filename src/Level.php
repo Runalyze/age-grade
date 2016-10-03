@@ -53,7 +53,7 @@ class Level
     {
         foreach (array_reverse($this->Limits, true) as $class => $lowerLimit) {
             if ($ageGrade >= $lowerLimit) {
-                $this->Class = $class;
+                $this->Class = (int) $class;
                 break;
             }
         }

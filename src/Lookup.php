@@ -34,7 +34,7 @@ class Lookup
         }
 
         $this->Table = $table;
-        $this->Age = $age;
+        $this->Age = (int) $age;
     }
 
     /**

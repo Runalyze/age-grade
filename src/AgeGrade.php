@@ -42,7 +42,7 @@ class AgeGrade
             throw new \InvalidArgumentException('Provided performance must be numerical.');
         }
 
-        $this->Performance = $performance;
+        $this->Performance = (float) $performance;
     }
 
     /**
@@ -73,8 +73,8 @@ class AgeGrade
      */
     public function setTableData($ageStandard, $ageFactor)
     {
-        $this->AgeStandard = round($ageStandard);
-        $this->OpenStandard = round($ageStandard * $ageFactor);
+        $this->AgeStandard = (int) round($ageStandard);
+        $this->OpenStandard = (int) round($ageStandard * $ageFactor);
         $this->AgeFactor = $ageFactor;
 
         return $this;

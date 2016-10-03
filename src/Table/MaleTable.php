@@ -18,12 +18,12 @@ namespace Runalyze\AgeGrade\Table;
  */
 class MaleTable extends AbstractTable
 {
-    /** @var array open standard times for all available distances in [s] */
+    /** @var int[] open standard times for all available distances in [s] */
     protected $OpenStandard = [
         779, 942, 1014, 1272, 1279, 1603, 1942, 2455, 2640, 3315, 3503, 4205, 5110, 7377, 8970, 16080, 21360, 36300, 39850, 52800,
     ];
 
-    /** @var array for each age an array with factors for all available distances in [0.0 .. 1.0] */
+    /** @var float[] for each age an array with factors for all available distances in [0.0 .. 1.0] */
     protected $AgeFactors = [
         [0.6062, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056, 0.6056],
         [0.6602, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596, 0.6596],
