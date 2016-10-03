@@ -1,0 +1,17 @@
+{
+  "name": "runalyze/age-grade",
+  "description": "Age grading for race results (running) based on tables provided by WMA",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5.9"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.8.*",
+    "friendsofphp/php-cs-fixer": "^1.11"
+  },
+  "autoload": {
+    "psr-4": {
+      "Runalyze\\AgeGrade\\": "src/"
+    }
+  }
+}
