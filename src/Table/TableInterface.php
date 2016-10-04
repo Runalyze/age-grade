@@ -26,6 +26,11 @@ interface TableInterface
     public function getAvailableAgeRange();
 
     /**
+     * @return float [km]
+     */
+    public function getMinimalDistance();
+
+    /**
      * @param  int   $age      [years]
      * @param  float $distance [km]
      * @return int   age standard by WMA [s]

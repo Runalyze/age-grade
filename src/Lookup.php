@@ -40,20 +40,30 @@ class Lookup
     /**
      * @param  float $distance      [km]
      * @param  int   $timeInSeconds [s]
+     * @param  int   $yearsAgo      [years] will be subtracted from internal age
      * @return float
      */
-    public function getAgePerformance($distance, $timeInSeconds)
+    public function getAgePerformance($distance, $timeInSeconds, $yearsAgo = 0)
     {
-        return $this->Table->getAgePerformance($this->Age, $distance, $timeInSeconds);
+        return $this->Table->getAgePerformance($this->Age - $yearsAgo, $distance, $timeInSeconds);
     }
 
     /**
      * @param  float    $distance      [km]
      * @param  int      $timeInSeconds [s]
+     * @param  int      $yearsAgo      [years] will be subtracted from internal age
      * @return AgeGrade
      */
-    public function getAgeGrade($distance, $timeInSeconds)
+    public function getAgeGrade($distance, $timeInSeconds, $yearsAgo = 0)
     {
-        return $this->Table->getAgeGrade($this->Age, $distance, $timeInSeconds);
+        return $this->Table->getAgeGrade($this->Age - $yearsAgo, $distance, $timeInSeconds);
+    }
+
+    /**
+     * @return float [km]
+     */
+    public function getMinimalDistance()
+    {
+        return $this->Table->getMinimalDistance();
     }
 }

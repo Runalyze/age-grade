@@ -32,6 +32,14 @@ class LookupTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testWithYearsAgo()
+    {
+        $this->assertNotEquals(
+            (new Lookup(new MaleTable(), 60))->getAgePerformance(10.0, 40 * 60, 30),
+            (new Lookup(new MaleTable(), 60))->getAgePerformance(10.0, 40 * 60)
+        );
+    }
+
     public function testThatTableIsRespected()
     {
         $this->assertNotEquals(
