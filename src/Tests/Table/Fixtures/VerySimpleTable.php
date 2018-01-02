@@ -25,7 +25,7 @@ class VerySimpleTable extends AbstractTable
 
     /** @var array open standard times for all available distances in [s] */
     protected $OpenStandard = [
-        780, 1600,
+        780.0, 1600.0,
     ];
 
     /** @var array for each age an array with factors for all available distances in [0.0 .. 1.0] */

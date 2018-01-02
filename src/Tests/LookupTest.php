@@ -55,4 +55,12 @@ class LookupTest extends \PHPUnit_Framework_TestCase
             (new Lookup(new MaleTable(), 30))->getAgeGrade(10.0, 40 * 60)->getPerformance()
         );
     }
+
+    public function testMinimalDistance()
+    {
+        $this->assertEquals(
+            (new Lookup(new MaleTable(), 30))->getMinimalDistance(),
+            (new MaleTable())->getMinimalDistance()
+        );
+    }
 }

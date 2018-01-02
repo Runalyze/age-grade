@@ -25,14 +25,12 @@ abstract class AbstractTable implements TableInterface
     protected $NumAges;
 
     /** @var float[] available distances [km] */
-    protected $Distances = [
-        5.0, 6.0, 6.437376, 8.0, 8.04672, 10, 12, 15, 16.09344, 20, 21.0975, 25, 30, 42.195, 50, 80.46736, 100, 160.9344, 200,
-    ];
+    protected $Distances = [];
 
     /** @var int[] available ages [from, to] in [years] */
     protected $AgeRange = [5, 100];
 
-    /** @var int[] open standard times for all available distances in [s] */
+    /** @var float[] open standard times for all available distances in [s] */
     protected $OpenStandard = [];
 
     /** @var float[] for each age an array with factors for all available distances in [0.0 .. 1.0] */
@@ -53,6 +51,14 @@ abstract class AbstractTable implements TableInterface
     }
 
     /**
+     * @return float[] open standard times for all available distances in [s]
+     */
+    public function getOpenStandard()
+    {
+        return $this->OpenStandard;
+    }
+
+    /**
      * @return array [from, to] in [years]
      */
     public function getAvailableAgeRange()
@@ -69,10 +75,10 @@ abstract class AbstractTable implements TableInterface
     }
 
     /**
-     * @param  int   $age           [years]
-     * @param  float $distance      [km]
-     * @param  int   $timeInSeconds [s]
-     * @return float age grade in [0.0 .. 1.0]
+     * @param  int       $age           [years]
+     * @param  float     $distance      [km]
+     * @param  int|float $timeInSeconds [s]
+     * @return float     age grade in [0.0 .. 1.0]
      */
     public function getAgePerformance($age, $distance, $timeInSeconds)
     {
@@ -80,9 +86,9 @@ abstract class AbstractTable implements TableInterface
     }
 
     /**
-     * @param  int      $age           [years]
-     * @param  float    $distance      [km]
-     * @param  int      $timeInSeconds [s]
+     * @param  int       $age           [years]
+     * @param  float     $distance      [km]
+     * @param  int|float $timeInSeconds [s]
      * @return AgeGrade
      */
     public function getAgeGrade($age, $distance, $timeInSeconds)
@@ -98,9 +104,9 @@ abstract class AbstractTable implements TableInterface
     }
 
     /**
-     * @param  int   $age      [years]
-     * @param  float $distance [km]
-     * @return int   age standard by WMA [s]
+     * @param  int       $age      [years]
+     * @param  float     $distance [km]
+     * @return int|float age standard by WMA [s]
      */
     public function getAgeStandard($age, $distance)
     {
