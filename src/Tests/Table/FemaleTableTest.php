@@ -30,4 +30,20 @@ class FemaleTableTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(0.8581, round($this->Table->getAgePerformance(42, 42.2, 2 * 60 * 60 + 45 * 60 + 0), 4));
         $this->assertEquals(0.4296, round($this->Table->getAgePerformance(54, 10.0, 1 * 60 * 60 + 23 * 60 + 45), 4));
     }
+
+    public function testSomeOpenStandardValues()
+    {
+        $this->assertEquals(6.92, $this->Table->getAgeStandard(25, 0.06));
+        $this->assertEquals(501.42, $this->Table->getAgeStandard(25, 3.0));
+        $this->assertEquals(8125.0, $this->Table->getAgeStandard(25, 42.195));
+        $this->assertEquals(57600.0, $this->Table->getAgeStandard(25, 200.0));
+    }
+
+    public function testConsistency()
+    {
+        $this->assertEquals(
+            count($this->Table->getOpenStandard()),
+            count($this->Table->getAvailableDistances())
+        );
+    }
 }
