@@ -28,6 +28,11 @@ class AbstractTableTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals([5.0, 10.0], $this->Table->getAvailableDistances());
     }
 
+    public function testOpenStandard()
+    {
+        $this->assertEquals([780.0, 1600.0], $this->Table->getOpenStandard());
+    }
+
     public function testAvailableAgeRange()
     {
         $this->assertEquals([30, 32], $this->Table->getAvailableAgeRange());

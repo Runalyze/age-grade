@@ -21,6 +21,11 @@ interface TableInterface
     public function getAvailableDistances();
 
     /**
+     * @return float[] open standard times for all available distances in [s]
+     */
+    public function getOpenStandard();
+
+    /**
      * @return array [from, to] in [years]
      */
     public function getAvailableAgeRange();
@@ -31,24 +36,24 @@ interface TableInterface
     public function getMinimalDistance();
 
     /**
-     * @param  int   $age      [years]
-     * @param  float $distance [km]
-     * @return int   age standard by WMA [s]
+     * @param  int       $age      [years]
+     * @param  float     $distance [km]
+     * @return int|float age standard by WMA [s]
      */
     public function getAgeStandard($age, $distance);
 
     /**
-     * @param  int   $age           [years]
-     * @param  float $distance      [km]
-     * @param  int   $timeInSeconds [s]
-     * @return float age grade in [0.0 .. 1.0]
+     * @param  int       $age           [years]
+     * @param  float     $distance      [km]
+     * @param  int|float $timeInSeconds [s]
+     * @return float     age grade in [0.0 .. 1.0]
      */
     public function getAgePerformance($age, $distance, $timeInSeconds);
 
     /**
-     * @param  int      $age           [years]
-     * @param  float    $distance      [km]
-     * @param  int      $timeInSeconds [s]
+     * @param  int       $age           [years]
+     * @param  float     $distance      [km]
+     * @param  int|float $timeInSeconds [s]
      * @return AgeGrade
      */
     public function getAgeGrade($age, $distance, $timeInSeconds);
