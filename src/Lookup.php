@@ -60,6 +60,15 @@ class Lookup
     }
 
     /**
+     * @param  float     $distance [km]
+     * @return float|int [s]
+     */
+    public function getAgeStandard($distance)
+    {
+        return $this->Table->getAgeStandard($this->Age, $distance);
+    }
+
+    /**
      * @return float [km]
      */
     public function getMinimalDistance()

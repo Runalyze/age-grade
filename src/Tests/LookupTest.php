@@ -63,4 +63,9 @@ class LookupTest extends \PHPUnit_Framework_TestCase
             (new MaleTable())->getMinimalDistance()
         );
     }
+
+    public function testAgeStandardLookupWithDecimals()
+    {
+        $this->assertEquals(9.58, (new Lookup(new MaleTable(), 25))->getAgeStandard(0.1));
+    }
 }
