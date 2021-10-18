@@ -13,12 +13,12 @@ namespace Runalyze\AgeGrade\Tests\Table;
 
 use Runalyze\AgeGrade\Tests\Table\Fixtures\VerySimpleTable;
 
-class AbstractTableTest extends \PHPUnit_Framework_TestCase
+class AbstractTableTest extends \PHPUnit\Framework\TestCase
 {
     /** @var VerySimpleTable */
     protected $Table;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->Table = new VerySimpleTable();
     }

@@ -18,14 +18,14 @@ standards checks, and provides configuration for our selected checks.
 To run checks only:
 
 ```console
-$ ./vendor/bin/php-cs-fixer fix . -v --diff --dry-run --config-file=.php_cs
+$ ./vendor/bin/php-cs-fixer fix . -v --diff --dry-run
 ```
 
 To have `php-cs-fixer` attempt to fix problems for you, omit the `--dry-run`
 flag:
 
 ```console
-$ ./vendor/bin/php-cs-fixer fix . -v --diff --config-file=.php_cs
+$ ./vendor/bin/php-cs-fixer fix . -v --diff
 ```
 
 If you allow php-cs-fixer to fix CS issues, please re-run the tests to ensure

@@ -13,7 +13,7 @@ namespace Runalyze\AgeGrade\Tests;
 
 use Runalyze\AgeGrade\Level;
 
-class LevelTest extends \PHPUnit_Framework_TestCase
+class LevelTest extends \PHPUnit\Framework\TestCase
 {
     public function testEmptyConstructor()
     {

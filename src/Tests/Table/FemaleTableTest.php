@@ -13,12 +13,12 @@ namespace Runalyze\AgeGrade\Tests\Table;
 
 use Runalyze\AgeGrade\Table\FemaleTable;
 
-class FemaleTableTest extends \PHPUnit_Framework_TestCase
+class FemaleTableTest extends \PHPUnit\Framework\TestCase
 {
     /** @var FemaleTable */
     protected $Table;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->Table = new FemaleTable();
     }
@@ -41,9 +41,9 @@ class FemaleTableTest extends \PHPUnit_Framework_TestCase
 
     public function testConsistency()
     {
-        $this->assertEquals(
-            count($this->Table->getOpenStandard()),
-            count($this->Table->getAvailableDistances())
+        $this->assertSameSize(
+            $this->Table->getOpenStandard(),
+            $this->Table->getAvailableDistances()
         );
     }
 }

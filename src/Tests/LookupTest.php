@@ -15,11 +15,11 @@ use Runalyze\AgeGrade\Lookup;
 use Runalyze\AgeGrade\Table\FemaleTable;
 use Runalyze\AgeGrade\Table\MaleTable;
 
-class LookupTest extends \PHPUnit_Framework_TestCase
+class LookupTest extends \PHPUnit\Framework\TestCase
 {
     public function testInvalidAge()
     {
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         new Lookup(new MaleTable(), 'foo');
     }

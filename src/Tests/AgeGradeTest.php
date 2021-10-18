@@ -14,11 +14,11 @@ namespace Runalyze\AgeGrade\Tests;
 use Runalyze\AgeGrade\AgeGrade;
 use Runalyze\AgeGrade\Level;
 
-class AgeGradeTest extends \PHPUnit_Framework_TestCase
+class AgeGradeTest extends \PHPUnit\Framework\TestCase
 {
     public function testInvalidPerformance()
     {
-        $this->setExpectedException(\InvalidArgumentException::class);
+        $this->expectException(\InvalidArgumentException::class);
 
         new AgeGrade('foo');
     }
