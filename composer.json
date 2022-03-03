@@ -1,7 +1,7 @@
 {
   "name": "runalyze/age-grade",
   "description": "Age grading for race results (running) based on tables provided by WMA",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "license": "MIT",
   "require": {
     "php": ">=8.0"
