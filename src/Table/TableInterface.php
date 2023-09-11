@@ -26,6 +26,11 @@ interface TableInterface
     public function getOpenStandard();
 
     /**
+     * @return float[] for each age an array with factors for all available distances in [0.0 .. 1.0]
+     */
+    public function getAgeFactors();
+
+    /**
      * @return array [from, to] in [years]
      */
     public function getAvailableAgeRange();
